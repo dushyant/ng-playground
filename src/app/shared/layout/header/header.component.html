@@ -1,11 +1,26 @@
 <div class="app-header">
   <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" routerLink="home">
+      <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
       Angular Playground
     </a>
     <div class="navbar-expand">
       <div class="navbar-nav">
-        <a routerLink="myday" class="nav-item nav-link" routerLinkActive="active">Project 1</a>
+        <button
+          class="btn btn-secondary"
+          mat-button
+          [matMenuTriggerFor]="projects"
+        >
+          Projects
+        </button>
+        <mat-menu #projects="matMenu">
+          <button mat-menu-item>
+            <span>NgRx</span>
+          </button>
+          <button mat-menu-item>
+            <span>Reactive Form</span>
+          </button>
+        </mat-menu>
       </div>
     </div>
   </nav>
